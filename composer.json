@@ -1,0 +1,38 @@
+{
+  "name": "fridzema/faker-quotes",
+  "description": "A custom Faker provider for generating quotes.",
+  "type": "library",
+  "version": "1.0.0",
+  "require": {
+        "php": "^8.2",
+        "fakerphp/faker": "^1.10",
+    "spatie/ray": "^1.41"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fridzema\\FakerQuotes\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Fridzema\\FakerQuotes\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "laravel/pint": "^1.19",
+    "pestphp/pest": "^3.0",
+    "pestphp/pest-plugin-arch": "^3.0"
+  },
+  "scripts": {
+    "test": "./vendor/bin/pest",
+    "test:parallel": "./vendor/bin/pest --parallel",
+    "test:profile": "./vendor/bin/pest --profile",
+    "test:coverage": "./vendor/bin/pest --coverage",
+    "lint": "pint"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}

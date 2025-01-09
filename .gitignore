@@ -1,0 +1,10 @@
+.idea
+.vscode
+
+vendor/
+composer.lock
+
+# Temp files
+pest-coverage.json
+.phpunit.result.cache
+.phpunit.cache
