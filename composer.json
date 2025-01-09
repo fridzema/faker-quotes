@@ -4,9 +4,8 @@
   "type": "library",
   "version": "1.0.0",
   "require": {
-        "php": "^8.2",
-        "fakerphp/faker": "^1.10",
-    "spatie/ray": "^1.41"
+    "php": "^8.2",
+    "fakerphp/faker": "^1.10"
   },
   "autoload": {
     "psr-4": {

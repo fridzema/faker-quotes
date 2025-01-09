@@ -29,7 +29,7 @@ class QuoteProvider implements QuoteProviderInterface
         ];
 
         foreach ($categories as $category) {
-            $path = __DIR__ . '/../Data/' . $category . '.php';
+            $path = __DIR__.'/../Data/'.$category.'.php';
             $loadedQuotes = array_map(function ($quote) use ($category) {
                 $quote['category'] = $category;
 
