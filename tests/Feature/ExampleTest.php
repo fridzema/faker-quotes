@@ -23,18 +23,32 @@ it('generates an inspirational quote', function () {
     expect(strlen($quote))->toBeGreaterThan(5);
 });
 
+it('generates a programming quote', function () {
+    $faker = Factory::create();
+    $faker->addProvider(new QuoteProvider($faker));
+
+    $quote = $faker->getProgrammingQuote();
+
+    expect($quote)->toBeString();
+    expect(strlen($quote))->toBeGreaterThan(5);
+});
+
 it('generates a quote with a specific category', function () {
     $faker = Factory::create();
     $faker->addProvider(new QuoteProvider($faker));
 
     $funnyQuote = $faker->getQuote('funny');
     $inspirationalQuote = $faker->getQuote('inspirational');
+    $programmingQuote = $faker->getQuote('programming');
 
     expect($funnyQuote)->toBeArray();
     expect($funnyQuote['category'])->toBe('funny');
 
     expect($inspirationalQuote)->toBeArray();
     expect($inspirationalQuote['category'])->toBe('inspirational');
+
+    expect($programmingQuote)->toBeArray();
+    expect($programmingQuote['category'])->toBe('programming');
 });
 
 it('handles unknown categories gracefully', function () {

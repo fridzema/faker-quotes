@@ -26,6 +26,7 @@ class QuoteProvider implements QuoteProviderInterface
         $categories = [
             'inspirational',
             'funny',
+            'programming',
         ];
 
         foreach ($categories as $category) {
@@ -71,6 +72,11 @@ class QuoteProvider implements QuoteProviderInterface
     public function getInspirationalQuote(): string
     {
         return $this->getQuoteText('inspirational');
+    }
+
+    public function getProgrammingQuote(): string
+    {
+        return $this->getQuoteText('programming');
     }
 
     protected function filterQuotesByCategory(?string $category): array

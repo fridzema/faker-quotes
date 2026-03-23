@@ -31,4 +31,9 @@ interface QuoteProviderInterface
      * Retrieve a random inspirational quote text.
      */
     public function getInspirationalQuote(): string;
+
+    /**
+     * Retrieve a random programming quote text.
+     */
+    public function getProgrammingQuote(): string;
 }
