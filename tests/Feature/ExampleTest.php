@@ -33,6 +33,16 @@ it('generates a programming quote', function () {
     expect(strlen($quote))->toBeGreaterThan(5);
 });
 
+it('generates a dad quote', function () {
+    $faker = Factory::create();
+    $faker->addProvider(new QuoteProvider($faker));
+
+    $quote = $faker->getDadQuote();
+
+    expect($quote)->toBeString();
+    expect(strlen($quote))->toBeGreaterThan(5);
+});
+
 it('generates a quote with a specific category', function () {
     $faker = Factory::create();
     $faker->addProvider(new QuoteProvider($faker));
@@ -49,6 +59,11 @@ it('generates a quote with a specific category', function () {
 
     expect($programmingQuote)->toBeArray();
     expect($programmingQuote['category'])->toBe('programming');
+
+    $dadQuote = $faker->getQuote('dad');
+
+    expect($dadQuote)->toBeArray();
+    expect($dadQuote['category'])->toBe('dad');
 });
 
 it('handles unknown categories gracefully', function () {

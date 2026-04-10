@@ -36,4 +36,9 @@ interface QuoteProviderInterface
      * Retrieve a random programming quote text.
      */
     public function getProgrammingQuote(): string;
+
+    /**
+     * Retrieve a random dad joke quote text.
+     */
+    public function getDadQuote(): string;
 }
